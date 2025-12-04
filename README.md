@@ -56,17 +56,17 @@ This builds the **.War** java artifact that can be deployed on a web server like
 
 # Install Tomcat on Jenkins Server to Serve Java WebApp. 
 
-Download Tomcat v9.0.98 
+Download Tomcat v9.0.111 
 
-    wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.98/bin/apache-tomcat-9.0.98.tar.gz
+    sudo wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.111/bin/apache-tomcat-9.0.111.tar.gz
 
 Unzip the downloaded **.tar.gz ** zip file 
 
-    tar -xvzf apache-tomcat-9.0.98.tar.gz 
+    tar -xvzf apache-tomcat-9.0.111.tar.gz 
 
 Move the extracted  binaries to desired Tomcat location
 
-    sudo mv apache-tomcat-9.0.98 /opt/tomcat
+    sudo mv apache-tomcat-9.0.111 /opt/tomcat
 
 Assign ownership of the directory 
 

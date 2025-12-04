@@ -10,7 +10,11 @@
 
 Add required dependencies for the jenkins package
 
-    sudo apt install fontconfig openjdk-17-jre -y
+        sudo apt install fontconfig openjdk-17-jre -y
+
+    or
+
+        sudo apt install fontconfig default-jre -y 
 
 Verify Java Installation 
 
@@ -20,17 +24,17 @@ Verify Java Installation
 
 ## Downlowd and Install Tomcat App on the EC2
 
-Download Tomcat v9.0.98 
+Download Tomcat v9.0.111 
 
-    wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.98/bin/apache-tomcat-9.0.98.tar.gz
+     sudo wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.111/bin/apache-tomcat-9.0.111.tar.gz
 
 Unzip the downloaded **.tar.gz ** zip file 
 
-    tar -xvzf apache-tomcat-9.0.98.tar.gz
+    tar -xvzf apache-tomcat-9.0.111.tar.gz
 
 Move the extracted  binaries to desired Tomcat location
 
-    sudo mv apache-tomcat-9.0.98 /opt/tomcat
+    sudo mv apache-tomcat-9.0.111 /opt/tomcat
 
 Make the  Start / Stop scripts executable:
 
@@ -39,9 +43,9 @@ Make the  Start / Stop scripts executable:
 
 Create link files for tomcat startup.sh and shutdown.sh
 
-    ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup
+   sudo ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup
 
-    ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
+    sudo ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
 
     tomcatup
 
@@ -50,11 +54,13 @@ Access Tomcat Application from brower on default port 8080  **http://`<server-ip
 
 
 **Note** (
-Tomcat by default does not allow browser based login. Changing a default parameter in context.xml will resolve this issue. 
-Find the **context.xml** file, and comment () Value ClassName field on files which are under webapp directory e.g. **manager/META-INF/context.xm**. 
-After that restart tomcat services to effect these changes
+Tomcat by default does not allow browser based login from sever other than that running the tomcat application. Changing the default parameter in context.xml file will resolve this. 
 
-    find / -name context.xml
+Find the **context.xml** file, and comment **() Value ClassName** field on files which are under webapp directory i.e `/opt/tomcat/webapps/manager/META-INF/context.xml` and  `/opt/tomcat/webapps/host-manager/META-INF/context.xml` 
+
+Restart tomcat services to enable these changes
+
+    sudo find / -name context.xml
 
 
 
