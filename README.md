@@ -159,14 +159,15 @@ After updating you can test the new version of the application as shown above.
 
 
 
-# Orchestrate Building (CI) and Deployment (CD) Steps using Jenkins and and Tomcat Server.
+
+# Orchestrate `Building (CI)` and `Deployment (CD)` Steps using Jenkins and and Tomcat Server.
 
 
 Follow the instructions in the Tomcat directory to setup a tomcat webserver.
 
 
 
-## CI: SetUp a Maven Build Jobs using Jenkins (Generate Artifacts)
+## `CI`: SetUp a Maven Build Jobs using Jenkins (Generate Artifacts)
 
 
 ### In jenkins, install the **Maven Integration** plugin if not already installed 
@@ -193,7 +194,7 @@ In the Jenkins Dashboard, select Manage Jenkins and choose Plugins. Verify if th
 
 
 
-## CD: Deploy your Artifact to the WebServer(e.g Tomcat)
+## `CD`: Deploy your Artifact to the WebServer(e.g Tomcat)
 
 
 A) Add Webser credentials so that Jenkins will be able to communicate to Webserver. 
